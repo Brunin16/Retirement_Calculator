@@ -23,7 +23,7 @@ namespace Tab_retirement_calculator.Service
             double value = calculateValue(averageSalary, workedYears, minYear);
             if (remainingTime == 0)
             {
-                return $"Parabéns, você já pode se aposentar\nE receberá {value}";
+                return $"Parabéns, você já pode se aposentar\nE receberá R${value}";
             }
             return "Faltam " + remainingTime + " anos para a sua aposentadoria\nE voce reberá em media R$" + value;
         }
