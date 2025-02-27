@@ -9,7 +9,7 @@ namespace Tab_retirement_calculator.Service
 {
     public class UserFunctions
     {
-        public List<UserModel> users = new List<UserModel> { new UserModel("Bruno", "123", "H")};
+        public List<UserModel> users = new List<UserModel> { new UserModel("rm558303@fiap.com.br", "558303", "H")};
 
         public UserModel login(string username, string password)
         {
