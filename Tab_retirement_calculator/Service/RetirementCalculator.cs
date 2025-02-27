@@ -8,7 +8,7 @@ namespace Tab_retirement_calculator.Service
 {
     public class RetirementCalculator
     {
-        public string responseYear(int year, int workedYears, string gender, double avarageSalary)
+        public string responseYear(int year, int workedYears, string gender, double averageSalary)
         {
             int minYear = gender == "H" ? 65 : 62;
             int remainingTime = calculateTime(year, workedYears, gender, minYear);
@@ -20,7 +20,7 @@ namespace Tab_retirement_calculator.Service
             {
                 return $"A idade minima para a aposentadoria é de {minYear} anos";
             }
-            double value = calculateValue(avarageSalary, workedYears, minYear);
+            double value = calculateValue(averageSalary, workedYears, minYear);
             if (remainingTime == 0)
             {
                 return $"Parabéns, você já pode se aposentar\nE receberá {value}";
@@ -40,7 +40,7 @@ namespace Tab_retirement_calculator.Service
             }
             return (minWorkedYears - workedYears) < 0 ? 0 : minWorkedYears - workedYears; 
         }
-        public double calculateValue(double avarageSalary, int workedYears, int minYear)
+        public double calculateValue(double averageSalary, int workedYears, int minYear)
         {
             double maxValue = 7786.02;
 
@@ -48,7 +48,7 @@ namespace Tab_retirement_calculator.Service
 
             percentage = Math.Min(percentage, 100);
 
-            double approximateValue = (avarageSalary * percentage) / 100;
+            double approximateValue = (averageSalary * percentage) / 100;
 
             return Math.Min(approximateValue, maxValue);
 
