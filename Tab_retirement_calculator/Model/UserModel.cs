@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tab_retirement_calculator.Model
 {
+    // This class is used to create a model for the user
     public class UserModel
     {
         public string username { get; set; }
