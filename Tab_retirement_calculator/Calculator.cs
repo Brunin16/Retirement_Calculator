@@ -28,7 +28,9 @@ namespace Tab_retirement_calculator
 
         private void enterButton_Click(object sender, EventArgs e)
         {
-            double value = Convert.ToDouble(approximateValue.Text.Replace(".", ","));
+            double value = !string.IsNullOrEmpty(approximateValue.Text)
+                ? Convert.ToDouble(approximateValue.Text.Replace(".", ","))
+                : 0;
             yearResponse.Text = new RetirementCalculator().responseYear(Convert.ToInt32(year.Text), Convert.ToInt32(workedYear.Text), _user.gender, value);
         }
 

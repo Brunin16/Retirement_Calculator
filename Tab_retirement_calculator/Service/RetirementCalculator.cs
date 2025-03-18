@@ -24,13 +24,13 @@ namespace Tab_retirement_calculator.Service
             double value = calculateValue(averageSalary, workedYears, minYear);
             if (remainingTime == 0)
             {
-                return $"Parabéns, você já pode se aposentar\nE receberá R${value}";
+                return $"Parabéns, você já pode se aposentar\n{(averageSalary != 0 ? $"E receberá R${value}" : "")}";
             }
             if (remainingTime == -3)
             {
                 return "Parabéns, você já pode se aposentar\nE receberá R$"+ value;
             }
-            return "Faltam " + remainingTime + " anos para a sua aposentadoria\nE voce reberá em media R$" + value;
+            return "Faltam " + remainingTime + " anos para a sua aposentadoria";
         }
         public int calculateTime(int year, int workedYears, string gender, int minYear, int minWorkedYearsBefore) 
         {     
